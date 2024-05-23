@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    
+
+
+  }
+  
+/* .image{
+    background-image: url('https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+
+} */
+
+  .form-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white
+
+}
+  
+  .registration-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .registration-form label {
+    font-weight: bold;
+  }
+  
+  .registration-form .btn-primary {
+    width: 100%;
+  }
+  
+  .login-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .login-link a {
+    color: #007bff;
+  }
+  

@@ -1,0 +1,60 @@
+<div class="image">
+    <div class="container">
+      <div class="form-container">
+        <h2>Registration Form</h2>
+        <form (ngSubmit)="onSubmit()" class="registration-form" #registrationForm="ngForm">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname" class="form-control" required #firstnameInput="ngModel">
+            <div *ngIf="firstnameInput.invalid && firstnameInput.touched" class="text-danger">
+              First Name is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname" class="form-control" required #lastnameInput="ngModel">
+            <div *ngIf="lastnameInput.invalid && lastnameInput.touched" class="text-danger">
+              Last Name is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" class="form-control" required email #emailInput="ngModel">
+            <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger">
+              <div *ngIf="emailInput.errors?.required">Email is required.</div>
+              <div *ngIf="emailInput.errors?.email">Invalid email format.</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" [(ngModel)]="phone" class="form-control" required pattern="^[0-9]{10}$" #phoneInput="ngModel">
+            <div *ngIf="phoneInput.invalid && phoneInput.touched" class="text-danger">
+              <div *ngIf="phoneInput.errors?.required">Phone is required.</div>
+              <div *ngIf="phoneInput.errors?.pattern">Phone must be 10 digits.</div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="user">User</label>
+            <select id="user" name="user" [(ngModel)]="selectedUser" class="form-control" required #userInput="ngModel">
+              <option value="">Select User Type</option>
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller</option>
+            </select>
+            <div *ngIf="userInput.invalid && userInput.touched" class="text-danger">
+              User type is required.
+            </div>
+          </div>
+          
+          <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="login-link">
+          <a href="#" routerLink="/login">Already have an account? Login here.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,30 @@
+<div class="form-container">
+    <form class="seller-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="area">Area</label>
+        <input type="text" id="area" [(ngModel)]="seller.area" name="area" required>
+      </div>
+      <div class="form-group">
+        <label for="squareMeter">Square Meter</label>
+        <input type="number" id="squareMeter" [(ngModel)]="seller.squareMeter" name="squareMeter" required>
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" id="image" (change)="onFileSelected($event)" required>
+      </div>
+      <div class="form-group">
+        <label for="bathrooms">Bathrooms</label>
+        <input type="number" id="bathrooms" [(ngModel)]="seller.bathrooms" name="bathrooms" required>
+      </div>
+      <div class="form-group">
+        <label for="bedrooms">Bedrooms</label>
+        <input type="number" id="bedrooms" [(ngModel)]="seller.bedrooms" name="bedrooms" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" [(ngModel)]="seller.location" name="location" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  
